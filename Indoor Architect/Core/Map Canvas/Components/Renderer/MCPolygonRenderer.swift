@@ -22,6 +22,11 @@ class MCPolygonRenderer: MKPolygonRenderer, MCOverlayRenderer {
 			strokeColor	= Color.currentDrawingTintColor
 			fillColor	= Color.currentDrawingTintColor.withAlphaComponent(0.3)
 			lineWidth	= Renderer.featureLineWidth
+        } else if let unitOverlay = overlay as? IMDFUnitOverlay,
+                  unitOverlay.unit.properties.category != .unspecified {
+            strokeColor = UIColor.systemGreen
+            fillColor   = UIColor.systemGreen.withAlphaComponent(0.3)
+            lineWidth   = Renderer.featureLineWidth
 		} else {
 			strokeColor	= UIColor.systemGray
 			fillColor	= UIColor.systemGray.withAlphaComponent(0.3)

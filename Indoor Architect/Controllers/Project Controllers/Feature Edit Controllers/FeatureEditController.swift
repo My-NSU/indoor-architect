@@ -77,6 +77,13 @@ class FeatureEditController: IATableViewController {
 			cells: [commentCell]
 		))
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        featureController?.willCloseEditController()
+        canvas?.renderFeatures()
+    }
 	
 	/// Prepares the feature edit controller for the feature
 	/// - Parameters:
@@ -96,8 +103,6 @@ class FeatureEditController: IATableViewController {
 	/// and dismisses the controller afterwards
 	/// - Parameter barButtonItem: The barButtonItem that was tapped to trigger the event
 	@objc func closeEditController(_ barButtonItem: UIBarButtonItem) -> Void {
-		featureController?.willCloseEditController()
-		canvas?.renderFeatures()
 		dismiss(animated: true, completion: nil)
 	}
 	
