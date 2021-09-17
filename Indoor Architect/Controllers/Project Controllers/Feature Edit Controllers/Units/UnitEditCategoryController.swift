@@ -14,6 +14,11 @@ protocol UnitEditCategoryControllerDelegate {
 
 class UnitEditCategoryController: IATableViewController {
 
+    private let favoriteCategroies: Set<IMDFType.UnitCategory> = [
+        .auditorium, .classroom, .foodservice, .laboratory,
+        .nonpublic, .office, .room, .unspecified
+    ]
+    
 	/// A mapping dictionary to store the category value for each cell
 	var categoryCells: [UITableViewCell: IMDFType.UnitCategory] = [:]
 	
@@ -45,11 +50,22 @@ class UnitEditCategoryController: IATableViewController {
 		
 		//
 		// Add the accessibility cells
-		tableViewSections.append((
-			title: nil,
-			description: nil,
-			cells: categoryCells.sorted(by: { $0.value.rawValue < $1.value.rawValue }).map({ $0.key })
-		))
+        tableViewSections.append((
+            title: "Favorites",
+            description: nil,
+            cells: categoryCells
+                .filter({ favoriteCategroies.contains($0.value) })
+                .sorted(by: { $0.value.rawValue < $1.value.rawValue })
+                .map({ $0.key })
+        ))
+        tableViewSections.append((
+            title: nil,
+            description: nil,
+            cells: categoryCells
+                .filter({ !favoriteCategroies.contains($0.value) })
+                .sorted(by: { $0.value.rawValue < $1.value.rawValue })
+                .map({ $0.key })
+        ))
     }
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
