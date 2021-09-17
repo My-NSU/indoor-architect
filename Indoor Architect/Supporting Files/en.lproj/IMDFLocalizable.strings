@@ -30,7 +30,7 @@
 
 "imdf.unitCategory.auditorium"				= "Auditorium";
 "imdf.unitCategory.brick"					= "Brick";
-"imdf.unitCategory.classroom"				= "Class room";
+"imdf.unitCategory.classroom"				= "Classroom";
 "imdf.unitCategory.column"					= "Column";
 "imdf.unitCategory.concrete"				= "Concrete";
 "imdf.unitCategory.conferenceroom"			= "Conference room";
@@ -63,11 +63,16 @@
 "imdf.unitCategory.ramp"					= "Ramp";
 "imdf.unitCategory.recreation"				= "Recreation";
 "imdf.unitCategory.restroom"				= "Restroom";
-"imdf.unitCategory.restroom.family"			= "Restroom (Family)";
-"imdf.unitCategory.restroom.female"			= "Restroom (Female)";
-"imdf.unitCategory.restroom.male"			= "Restroom (Male)";
-"imdf.unitCategory.restroom.transgender"	= "Restroom (Transgender)";
-"imdf.unitCategory.restroom.unisex"			= "Restroom (Unisex)";
+"imdf.unitCategory.restroom.family"			= "Restroom (family)";
+"imdf.unitCategory.restroom.female"			= "Restroom (female)";
+"imdf.unitCategory.restroom.female.wheelchair" = "Restroom (female wheelchair)";
+"imdf.unitCategory.restroom.male"			= "Restroom (male)";
+"imdf.unitCategory.restroom.male.wheelchair" = "Restroom (male wheelchair)";
+"imdf.unitCategory.restroom.transgender"	= "Restroom (transgender)";
+"imdf.unitCategory.restroom.transgender.wheelchair" = "Restroom (transgender wheelchair)";
+"imdf.unitCategory.restroom.unisex"			= "Restroom (unisex)";
+"imdf.unitCategory.restroom.unisex.wheelchair" = "Restroom (unisex wheelchair)";
+"imdf.unitCategory.restroom.wheelchair"     = "Restroom (wheelchair)";
 "imdf.unitCategory.road"					= "Road";
 "imdf.unitCategory.room"					= "Room";
 "imdf.unitCategory.serverroom"				= "Server room";
@@ -77,6 +82,7 @@
 "imdf.unitCategory.steps"					= "Steps";
 "imdf.unitCategory.storage"					= "Storage";
 "imdf.unitCategory.structure"				= "Structure";
+"imdf.unitCategory.terrace"                 = "Terrace";
 "imdf.unitCategory.theater"					= "Theater";
 "imdf.unitCategory.unenclosedarea"			= "Unenclosed Area";
 "imdf.unitCategory.unspecified"				= "Unspecified";

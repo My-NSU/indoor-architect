@@ -138,9 +138,14 @@ struct IMDFType {
 		case restroom
 		case restroomFamily = "restroom.family"
 		case restroomFemale = "restroom.female"
+        case restroomFemaleWheelchair = "restroom.female.wheelchair"
 		case restroomMale = "restroom.male"
+        case restroomMaleWheelchair = "restroom.male.wheelchair"
 		case restroomTransgender = "restroom.transgender"
+        case restroomTransgenderWheelchair = "restroom.transgender.wheelchair"
 		case restroomUnisex = "restroom.unisex"
+        case restroomUnisexWheelchair = "restroom.unisex.wheelchair"
+        case restroomWheelchair = "restroom.wheelchair"
 		case road
 		case room
 		case serverroom
@@ -150,6 +155,7 @@ struct IMDFType {
 		case steps
 		case storage
 		case structure
+        case terrace
 		case theater
 		case unenclosedarea
 		case unspecified
