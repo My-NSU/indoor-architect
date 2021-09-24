@@ -40,14 +40,14 @@ class Unit: Feature<Unit.Properties> {
 		
 		func encode(to encoder: Encoder) throws {
 			var container = encoder.container(keyedBy: CodingKeys.self)
-			try container.encode(category,		forKey: .category)
-			try container.encode(restriction,	forKey: .restriction)
+			try container.encode(category, forKey: .category)
+			try container.encode(restriction, forKey: .restriction)
 			try container.encode(accessibility,	forKey: .accessibility)
-			try container.encode(name,			forKey: .name)
-			try container.encode(altName,		forKey: .altName)
-			try container.encode(levelId,		forKey: .levelId)
-			try container.encode(displayPoint,	forKey: .displayPoint)
-			try container.encode(information,	forKey: .information)
+			try container.encode(name, forKey: .name)
+			try container.encode(altName, forKey: .altName)
+            try container.encode(levelId?.uuidString.lowercased(), forKey: .levelId)
+			try container.encode(displayPoint, forKey: .displayPoint)
+			try container.encode(information, forKey: .information)
 		}
 	}
 	

@@ -45,7 +45,13 @@ class ProjectActionSection: ProjectSection {
 		(MapCanvasViewController()).presentForSelectedProject()
 	}
 	
-	@objc private func didTapExportArchive(_ sender: UIButton) -> Void {
-		print("export")
-	}
+    @objc private func didTapExportArchive(_ sender: UIButton) -> Void {
+        guard let project = Application.currentProject,
+              let url = project.exportIMDFArchive()
+        else { return }
+        
+        let activityViewController = UIActivityViewController(
+            activityItems: [url], applicationActivities: nil)
+        delegate?.present(activityViewController, animated: true)
+    }
 }

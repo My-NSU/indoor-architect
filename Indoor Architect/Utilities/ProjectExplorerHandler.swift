@@ -251,7 +251,24 @@ class ProjectExplorerHandler: NSObject, UITableViewDelegate, UITableViewDataSour
 			deleteAction.image = Icon.trash
 			
 			let exportAction = UIContextualAction(style: .normal, title: nil, handler: { (action, view, completion) in
-				completion(false)
+                if indexPath.row >= IMDFProject.projects.count {
+                    completion(false)
+                    return
+                }
+                
+                let project = IMDFProject.projects[indexPath.row]
+                
+                guard let url = project.exportIMDFArchive() else {
+                    completion(false)
+                    return
+                }
+                    
+                let activityViewController = UIActivityViewController(
+                    activityItems: [url], applicationActivities: nil)
+                Application.rootController.present(
+                    activityViewController, animated: true)
+                
+                completion(true)
 			})
 			exportAction.backgroundColor = Color.indoorMapExport
 			exportAction.image = Icon.download

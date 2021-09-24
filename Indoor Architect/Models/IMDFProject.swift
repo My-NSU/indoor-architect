@@ -106,4 +106,36 @@ class IMDFProject {
 		
 		return unusedUuid
 	}
+    
+    /// Creates a zipped IMDF archive in a temporary directory and returns its URL
+    func exportIMDFArchive() -> URL? {
+        let projectURL = ProjectManager.shared.url(
+            forPathComponent: .archiveDirectory,
+            inProjectWithUuid: manifest.uuid)
+        try? imdfArchive.save()
+        
+        let coordinator = NSFileCoordinator()
+        let fileManager = FileManager.default
+        var urlForExport: URL?
+        
+        coordinator.coordinate(
+            readingItemAt: projectURL,
+            options: .forUploading,
+            error: nil
+        ) { zipArchiveURL in
+            if let temporaryURL = try? fileManager.url(
+                for: .itemReplacementDirectory, in: .userDomainMask,
+                   appropriateFor: zipArchiveURL, create: true)
+                .appendingPathComponent(manifest.title)
+                .appendingPathExtension("zip")
+            {
+                try? fileManager.moveItem(
+                    at: zipArchiveURL,
+                    to: temporaryURL)
+                urlForExport = temporaryURL
+            }
+        }
+        
+        return urlForExport
+    }
 }

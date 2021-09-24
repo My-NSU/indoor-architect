@@ -15,7 +15,7 @@ enum Color {
 	
 	static let indoorMapEdit: UIColor = .systemIndigo
 	
-	static let indoorMapExport: UIColor = .systemGray2
+	static let indoorMapExport: UIColor = .systemOrange
 	
 	
 	// MARK: Map Canvas

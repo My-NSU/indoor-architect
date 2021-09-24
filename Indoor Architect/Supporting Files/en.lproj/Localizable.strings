@@ -119,5 +119,5 @@
 "project.projectClient"				= "Client";
 "project.created"					= "Created";
 "project.updated"					= "Last edited";
-"project.editIndoorMap"				= "Edit Indoor Map";
-"project.exportImdfArchive"			= "Export IMDF Archive";
+"project.editIndoorMap"				= "Edit Map";
+"project.exportImdfArchive"			= "Export IMDF";
